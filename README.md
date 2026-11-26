@@ -20,6 +20,7 @@ Most freelancers price by guessing, or by copying a competitor. Ta3rifa starts f
 - **Saved quotes.** Save, reopen and delete quotes. Copy as text, print or save as PDF from the browser, export and import a JSON backup.
 - **Arabic and English.** Full RTL and LTR switch, light and dark theme, mobile first.
 - **Five currencies as labels:** EGP, USD, SAR, AED, EUR.
+- Installable as a home-screen app and opens offline after the first visit.
 
 ## Screenshots
 

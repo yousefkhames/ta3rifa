@@ -159,3 +159,5 @@ document.body.dataset.tab = 'rate';
 init();
 if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { $('mini').style.visibility = en[0].isIntersecting ? 'hidden' : 'visible'; }).observe($('tag'));
 })();
+
+;if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
