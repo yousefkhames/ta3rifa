@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>تعريفة · Ta3rifa</title>
+<meta name="description" content="حاسبة سعر الفريلانسر: مصاريفك + الضرايب + ساعاتك = سعرك العادل.">
+<meta name="theme-color" content="#14213d">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="logo.svg" alt="" width="36" height="36"><b data-i="brand">تعريفة</b><small>Ta3rifa</small></div>
+  <nav class="tabs" role="tablist" aria-label="sections">
+    <button role="tab" data-tab="rate" aria-selected="true" data-i="tabRate"></button>
+    <button role="tab" data-tab="quote" aria-selected="false" data-i="tabQuote"></button>
+    <button role="tab" data-tab="saved" aria-selected="false" data-i="tabSaved"></button>
+  </nav>
+  <div class="tools">
+    <button id="lang" class="chip" aria-label="language">EN</button>
+    <button id="theme" class="chip" aria-label="theme">◐</button>
+  </div>
+</header>
+
+<main>
+<section id="tab-rate" class="tab" role="tabpanel">
+  <div class="grid">
+    <div class="col">
+      <div class="card" id="c-life">
+        <h2><span class="n">1</span><span data-i="sLife"></span></h2>
+        <label class="f"><span data-i="takeHome"></span><div class="inp"><input id="takeHome" type="number" inputmode="decimal" min="0"><em class="cur"></em></div><small data-i="takeHomeH"></small></label>
+        <label class="f"><span data-i="currency"></span>
+          <select id="currency"></select></label>
+      </div>
+
+      <div class="card" id="c-costs">
+        <h2><span class="n">2</span><span data-i="sCosts"></span></h2>
+        <p class="hint" data-i="costsH"></p>
+        <div class="presets" id="presets"></div>
+        <ul id="expList" class="exp"></ul>
+        <form id="expForm" class="expform">
+          <input id="expName" type="text" data-ph="expName" aria-label="name">
+          <input id="expAmt" type="number" inputmode="decimal" min="0" data-ph="expAmt" aria-label="amount">
+          <select id="expPer"><option value="m"></option><option value="y"></option></select>
+          <button class="btn" type="submit" data-i="add"></button>
+        </form>
+        <div class="sum"><span data-i="expTotal"></span><b id="expMonthly">0</b></div>
+      </div>
+
+      <div class="card" id="c-time">
+        <h2><span class="n">3</span><span data-i="sTime"></span></h2>
+        <div class="two">
+          <label class="f"><span data-i="hpw"></span><div class="inp"><input id="hoursPerWeek" type="number" inputmode="decimal" min="0" max="100"><em data-i="hUnit"></em></div></label>
+          <label class="f"><span data-i="weeksOff"></span><div class="inp"><input id="weeksOff" type="number" inputmode="decimal" min="0" max="51"><em data-i="wUnit"></em></div></label>
+        </div>
+        <label class="f"><span><span data-i="nonBill"></span> <b id="nbOut" class="val"></b></span>
+          <input id="nonBillablePct" type="range" min="0" max="80" step="1"><small data-i="nonBillH"></small></label>
+        <label class="f"><span data-i="hpd"></span><div class="inp"><input id="hoursPerDay" type="number" inputmode="decimal" min="0" max="16"><em data-i="hUnit"></em></div></label>
+      </div>
+
+      <div class="card" id="c-tax">
+        <h2><span class="n">4</span><span data-i="sTax"></span></h2>
+        <div class="two">
+          <label class="f"><span data-i="taxPct"></span><div class="inp"><input id="taxPct" type="number" inputmode="decimal" min="0" max="90"><em>%</em></div></label>
+          <label class="f"><span data-i="feePct"></span><div class="inp"><input id="feePct" type="number" inputmode="decimal" min="0" max="60"><em>%</em></div></label>
+        </div>
+        <label class="f"><span><span data-i="margin"></span> <b id="mOut" class="val"></b></span>
+          <input id="marginPct" type="range" min="0" max="50" step="1"><small data-i="marginH"></small></label>
+        <label class="check"><input id="deductible" type="checkbox"><span data-i="deduct"></span></label>
+        <label class="f"><span data-i="roundTo"></span>
+          <select id="roundTo"><option value="1">1</option><option value="5">5</option><option value="10">10</option><option value="50">50</option></select></label>
+        <p class="hint" data-i="taxNote"></p>
+      </div>
+    </div>
+
+    <aside class="col side">
+      <div class="tag" id="tag" aria-live="polite">
+        <div class="hole"></div>
+        <div class="tl" data-i="yourRate"></div>
+        <div class="big"><span id="hourly">0</span><small><span class="cur"></span> / <span data-i="perHour"></span></small></div>
+        <div class="row3">
+          <div><i data-i="perDay"></i><b id="daily">0</b></div>
+          <div><i data-i="perMonth"></i><b id="monthly">0</b></div>
+          <div><i data-i="perYear"></i><b id="yearly">0</b></div>
+        </div>
+        <div id="warn" class="warn" hidden></div>
+      </div>
+
+      <div class="card">
+        <h3 data-i="whereGoes"></h3>
+        <div id="bar" class="bar" role="img"></div>
+        <ul id="legend" class="legend"></ul>
+      </div>
+
+      <div class="card reality">
+        <h3 data-i="reality"></h3>
+        <p id="realityTxt"></p>
+        <div class="btnrow">
+          <button class="btn alt" id="useRate" data-i="useInQuote"></button>
+          <button class="btn ghost" id="copyRate" data-i="copySummary"></button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="tab-quote" class="tab" role="tabpanel" hidden>
+  <div class="grid">
+    <div class="col">
+      <div class="card">
+        <h2><span data-i="qTitle"></span></h2>
+        <div class="two">
+          <label class="f"><span data-i="client"></span><input id="qClient" type="text"></label>
+          <label class="f"><span data-i="project"></span><input id="qProject" type="text"></label>
+        </div>
+        <div class="two">
+          <label class="f"><span data-i="qHours"></span><div class="inp"><input id="qHours" type="number" inputmode="decimal" min="0"><em data-i="hUnit"></em></div></label>
+          <label class="f"><span data-i="qRate"></span><div class="inp"><input id="qRate" type="number" inputmode="decimal" min="0"><em class="cur"></em></div><small><button type="button" class="link" id="qFromRate" data-i="useCalc"></button></small></label>
+        </div>
+        <div class="two">
+          <label class="f"><span data-i="qRev"></span><div class="inp"><input id="qRev" type="number" inputmode="decimal" min="0"><em>%</em></div><small data-i="qRevH"></small></label>
+          <label class="f"><span data-i="qRush"></span><div class="inp"><input id="qRush" type="number" inputmode="decimal" min="0"><em>%</em></div></label>
+        </div>
+        <div class="two">
+          <label class="f"><span data-i="qFixed"></span><div class="inp"><input id="qFixed" type="number" inputmode="decimal" min="0"><em class="cur"></em></div><small data-i="qFixedH"></small></label>
+          <label class="f"><span data-i="qDisc"></span><div class="inp"><input id="qDisc" type="number" inputmode="decimal" min="0"><em>%</em></div></label>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i="budgetCheck"></h3>
+        <label class="f"><span data-i="clientBudget"></span><div class="inp"><input id="qBudget" type="number" inputmode="decimal" min="0"><em class="cur"></em></div></label>
+        <div id="verdict" class="verdict" hidden></div>
+      </div>
+    </div>
+    <aside class="col side">
+      <div class="receipt" id="receipt">
+        <div class="rh"><b data-i="qReceipt"></b><span id="rDate"></span></div>
+        <div id="rWho" class="rwho"></div>
+        <dl id="rLines"></dl>
+        <div class="rt"><span data-i="total"></span><b id="rTotal">0</b></div>
+        <div class="reff"><span data-i="effective"></span> <b id="rEff">0</b></div>
+        <div class="btnrow noprint">
+          <button class="btn" id="saveQuote" data-i="saveQuote"></button>
+          <button class="btn alt" id="copyQuote" data-i="copyQuote"></button>
+          <button class="btn ghost" id="printQuote" data-i="print"></button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="tab-saved" class="tab" role="tabpanel" hidden>
+  <div class="card">
+    <h2><span data-i="savedTitle"></span></h2>
+    <ul id="savedList" class="saved"></ul>
+    <p id="savedEmpty" class="hint" data-i="savedEmpty"></p>
+    <div class="btnrow">
+      <button class="btn alt" id="exportBtn" data-i="exportData"></button>
+      <label class="btn ghost filebtn"><span data-i="importData"></span><input id="importFile" type="file" accept="application/json" hidden></label>
+      <button class="btn danger" id="resetBtn" data-i="resetAll"></button>
+    </div>
+    <p class="hint" data-i="localNote"></p>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><span data-i="footer"></span> · <a href="https://github.com/yousefkhames/ta3rifa" rel="noopener">GitHub</a></footer>
+<div id="mini" class="mini" aria-hidden="true"><span data-i="yourRate"></span><b id="miniV">0</b><small class="cur"></small></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="calc.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

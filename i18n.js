@@ -1,0 +1,53 @@
+window.I18N = {
+ar: {
+brand:'تعريفة', tabRate:'سعرك', tabQuote:'عرض سعر', tabSaved:'المحفوظ',
+sLife:'عايز تكسب كام؟', takeHome:'صافي دخلك الشهري اللي في جيبك', takeHomeH:'بعد الضرايب والمصاريف. ده المرتب اللي نفسك تاخده.', currency:'العملة',
+sCosts:'مصاريف الشغل', costsH:'أي حاجة بتدفعها عشان تشتغل: نت، برامج، كوورك، موبايل، كورسات.', expName:'اسم المصروف', expAmt:'المبلغ', add:'أضف', expTotal:'إجمالي المصاريف شهريًا',
+per_m:'شهريًا', per_y:'سنويًا', remove:'حذف',
+sTime:'وقتك الحقيقي', hpw:'ساعات الشغل في الأسبوع', weeksOff:'أسابيع إجازة وأعياد ومرض في السنة', hUnit:'ساعة', wUnit:'أسبوع', nonBill:'وقت مش مدفوع', nonBillH:'رسايل، اجتماعات، تدوير على شغل، محاسبة. عادةً 20 إلى 40%.', hpd:'ساعات الشغل المدفوع في اليوم',
+sTax:'ضرايب ورسوم وهامش', taxPct:'نسبة الضريبة على الدخل', feePct:'عمولة المنصة', margin:'هامش أمان وادخار', marginH:'للشهور الفاضية والأجهزة اللي هتبوظ.', deduct:'المصاريف بتتخصم من وعاء الضريبة', roundTo:'قرّب السعر لأقرب', taxNote:'النسب دي من عندك. اسأل محاسب عن وضعك الضريبي الفعلي.',
+yourRate:'سعر ساعتك العادل', perHour:'ساعة', perDay:'يوم', perMonth:'شهر', perYear:'سنة',
+whereGoes:'فلوس العميل بتروح فين؟', reality:'الحقيقة اللي مش بتتحسب', useInQuote:'استخدمه في عرض سعر', copySummary:'انسخ الملخص',
+p_takeHome:'جيبك', p_expenses:'مصاريف', p_tax:'ضرايب', p_buffer:'أمان وادخار', p_fee:'عمولة المنصة',
+warnNeed:'اكتب صافي دخلك وساعات شغلك عشان نحسب.',
+warnHigh:'السعر ده عالي جدًا بالنسبة لساعاتك. جرّب تقلل المصاريف أو ترفع الساعات المدفوعة.',
+realityTxt:(d)=>`أنت بتشتغل ${d.hpw} ساعة في الأسبوع، لكن بتبيع منها ${d.sold} ساعة بس. وبتبيع ${d.weeks} أسبوع في السنة، يعني ${d.hours} ساعة مدفوعة في الشهر. لو بعت ساعة بأقل من ${d.rate} ${d.cur}، أنت بتدفع من جيبك عشان تشتغل.`,
+summary:(d)=>`تعريفة: سعر ساعتي ${d.hourly} ${d.cur}، ويومي ${d.daily}، والشهر ${d.monthly}. مبني على صافي ${d.net} ومصاريف ${d.exp} وضريبة ${d.tax}% و${d.hours} ساعة مدفوعة شهريًا.`,
+qTitle:'احسب عرض السعر', client:'العميل', project:'المشروع', qHours:'الساعات المتوقعة', qRate:'سعر الساعة', useCalc:'استخدم سعري المحسوب', qRev:'مراجعات وتعديلات', qRevH:'ضيف 15 إلى 30% للتعديلات.', qRush:'استعجال', qFixed:'تكاليف ثابتة', qFixedH:'خطوط، صور، رخص، مواصلات.', qDisc:'خصم',
+budgetCheck:'ميزانية العميل كافية؟', clientBudget:'ميزانية العميل للمشروع',
+vOk:(d)=>`ميزانيته تدّيك ${d.eff} ${d.cur} في الساعة. فوق حدك الأدنى. اقبل.`, vClose:(d)=>`ميزانيته تدّيك ${d.eff} ${d.cur} في الساعة. قريبة من حدك. فاوض على نطاق الشغل أو التعديلات.`, vBelow:(d)=>`ميزانيته تدّيك ${d.eff} ${d.cur} في الساعة. ناقصك ${d.gap} ${d.cur}. قلّل النطاق أو ارفض.`,
+qReceipt:'عرض سعر', total:'الإجمالي', effective:'سعر الساعة الفعلي',
+l_base:'الشغل', l_rev:'مراجعات', l_rush:'استعجال', l_fixed:'تكاليف ثابتة', l_disc:'خصم',
+saveQuote:'احفظ', copyQuote:'انسخ', print:'اطبع / PDF',
+savedTitle:'عروض الأسعار المحفوظة', savedEmpty:'مفيش عروض محفوظة لسه.', exportData:'صدّر البيانات', importData:'استورد', resetAll:'امسح كل حاجة', localNote:'بياناتك محفوظة في المتصفح ده بس. صدّر نسخة احتياطية لو بدّلت جهاز.',
+saved:'اتحفظ', copied:'اتنسخ', imported:'اتستورد', badFile:'الملف مش صالح', confirmReset:'تمسح كل بياناتك؟', confirmDel:'تمسح العرض ده؟', open:'افتح', del:'حذف', untitled:'بدون اسم', noClient:'عميل',
+footer:'تعريفة · أداة مجانية بتشتغل في متصفحك', hh:'ساعة'
+},
+en: {
+brand:'Ta3rifa', tabRate:'Your rate', tabQuote:'Quote', tabSaved:'Saved',
+sLife:'What do you want to earn?', takeHome:'Monthly take-home you want in your pocket', takeHomeH:'After tax and business costs. The salary you wish you had.', currency:'Currency',
+sCosts:'Business costs', costsH:'Anything you pay to do the work: internet, software, co-working, phone, courses.', expName:'Expense name', expAmt:'Amount', add:'Add', expTotal:'Monthly costs total',
+per_m:'monthly', per_y:'yearly', remove:'Remove',
+sTime:'Your real time', hpw:'Work hours per week', weeksOff:'Weeks off per year (holidays, sick, vacation)', hUnit:'h', wUnit:'wk', nonBill:'Unpaid time', nonBillH:'Emails, meetings, finding clients, admin. Usually 20 to 40%.', hpd:'Paid hours in a working day',
+sTax:'Tax, fees and margin', taxPct:'Income tax rate', feePct:'Platform fee', margin:'Safety and savings margin', marginH:'For slow months and the laptop that will die.', deduct:'Costs are deducted before tax', roundTo:'Round rate to nearest', taxNote:'These rates are yours to set. Ask an accountant about your real tax situation.',
+yourRate:'Your fair hourly rate', perHour:'hour', perDay:'Day', perMonth:'Month', perYear:'Year',
+whereGoes:'Where does the client money go?', reality:'The part nobody counts', useInQuote:'Use in a quote', copySummary:'Copy summary',
+p_takeHome:'Your pocket', p_expenses:'Costs', p_tax:'Tax', p_buffer:'Safety and savings', p_fee:'Platform fee',
+warnNeed:'Enter your take-home and work hours to calculate.',
+warnHigh:'That rate is very high for your hours. Try cutting costs or raising paid hours.',
+realityTxt:(d)=>`You work ${d.hpw} hours a week but only sell ${d.sold} of them. You sell ${d.weeks} weeks a year, so ${d.hours} paid hours a month. Sell an hour for less than ${d.rate} ${d.cur} and you are paying to work.`,
+summary:(d)=>`Ta3rifa: my hourly rate is ${d.hourly} ${d.cur}, day rate ${d.daily}, month ${d.monthly}. Based on ${d.net} net, ${d.exp} costs, ${d.tax}% tax and ${d.hours} paid hours a month.`,
+qTitle:'Build a quote', client:'Client', project:'Project', qHours:'Estimated hours', qRate:'Hourly rate', useCalc:'Use my calculated rate', qRev:'Revisions buffer', qRevH:'Add 15 to 30% for rounds of edits.', qRush:'Rush fee', qFixed:'Fixed costs', qFixedH:'Fonts, stock, licences, transport.', qDisc:'Discount',
+budgetCheck:'Is the client budget enough?', clientBudget:'Client budget for the project',
+vOk:(d)=>`Their budget pays ${d.eff} ${d.cur} an hour. Above your floor. Take it.`, vClose:(d)=>`Their budget pays ${d.eff} ${d.cur} an hour. Close to your floor. Negotiate scope or revisions.`, vBelow:(d)=>`Their budget pays ${d.eff} ${d.cur} an hour. You are short ${d.gap} ${d.cur}. Cut scope or walk away.`,
+qReceipt:'Quote', total:'Total', effective:'Effective hourly',
+l_base:'Work', l_rev:'Revisions', l_rush:'Rush', l_fixed:'Fixed costs', l_disc:'Discount',
+saveQuote:'Save', copyQuote:'Copy', print:'Print / PDF',
+savedTitle:'Saved quotes', savedEmpty:'No saved quotes yet.', exportData:'Export data', importData:'Import', resetAll:'Erase everything', localNote:'Your data lives in this browser only. Export a backup if you switch devices.',
+saved:'Saved', copied:'Copied', imported:'Imported', badFile:'Invalid file', confirmReset:'Erase all your data?', confirmDel:'Delete this quote?', open:'Open', del:'Delete', untitled:'Untitled', noClient:'Client',
+footer:'Ta3rifa · a free tool that runs in your browser', hh:'h'
+}};
+window.PRESETS = {
+ar:[['إنترنت',500,'m'],['موبايل',250,'m'],['برامج واشتراكات',600,'m'],['كوورك سبيس',1500,'m'],['كهرباء ونصيبك من الإيجار',1200,'m'],['مواصلات',800,'m'],['كورسات',3000,'y'],['تأمين صحي',6000,'y']],
+en:[['Internet',500,'m'],['Phone',250,'m'],['Software and subscriptions',600,'m'],['Co-working',1500,'m'],['Power and rent share',1200,'m'],['Transport',800,'m'],['Courses',3000,'y'],['Health insurance',6000,'y']]};
+window.CURRENCIES = {EGP:{ar:'ج.م',en:'EGP'},USD:{ar:'$',en:'USD'},SAR:{ar:'ر.س',en:'SAR'},AED:{ar:'د.إ',en:'AED'},EUR:{ar:'€',en:'EUR'}};

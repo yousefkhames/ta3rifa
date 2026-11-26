@@ -1,0 +1,1 @@
+{"name":"ta3rifa","version":"1.0.0","description":"Freelancer rate calculator: costs + tax + hours = your fair price","license":"MIT","scripts":{"test":"node --test tests/calc.test.js","e2e":"node tests/e2e.js"},"devDependencies":{"puppeteer-core":"^24.0.0"}}
