@@ -6,6 +6,15 @@
 
 ![Mobile, Arabic RTL](docs/mobile-rate.png)
 
+## Screenshots
+
+Captured from the live site (https://yousefkhames.github.io/ta3rifa/).
+
+<p>
+  <img src="docs/screenshots/live-desktop.png" alt="ta3rifa desktop view" width="640">
+  <img src="docs/screenshots/live-mobile.png" alt="ta3rifa mobile view" width="200">
+</p>
+
 ## The pitch
 
 Most freelancers price by guessing, or by copying a competitor. Ta3rifa starts from the other end: how much you want in your pocket each month, what your work costs, how much tax and platform fee you pay, and how many hours you can really sell after holidays and unpaid admin. It gives you an hourly rate, a day rate and a monthly target. Then it turns that rate into a client quote and tells you if a client's budget is below your floor.
